@@ -75,7 +75,11 @@ Allow a couple hours to complete downloads and installations.
     * Remove kafka from sudo group and lock the kafka user password so it can't be used to login:
     * sudo deluser kafka sudo
     * sudo passwd kafka -l
+    * Right-click the terminal icon to quit this session
 *	Spark – see https://phoenixnap.com/kb/install-spark-on-ubuntu
+    * wget https://downloads.apache.org/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz
+    * tar xvf spark-*
+    * sudo mv spark-3.0.1-bin-hadoop3.2 /opt/spark
 *	pip install --upgrade pip
 *	pip install --upgrade virtualenv
 *	pip install --upgrade setuptools
@@ -91,8 +95,10 @@ Allow a couple hours to complete downloads and installations.
 
 ```Bash
 java -version
+javac -version
 scala -version
 python3 --version
+git --version
 ```
 
 Note: Anaconda will be installed in /home/big-data-user/anaconda3.
