@@ -82,7 +82,6 @@ Allow a couple hours to complete downloads and installations.
     * sudo mv spark-3.0.1-bin-hadoop3.2   /opt/spark
     * echo "export SPARK_HOME=/opt/spark" >> ~/.profile
     * echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.profile
-    * echo "export PYSPARK_PYTHON=/usr/bin/python3" >> ~/.profile
 *	pip install --upgrade pip
 *	pip install --upgrade virtualenv
 *	pip install --upgrade setuptools
