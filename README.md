@@ -31,11 +31,10 @@
 * After installation, open a terminal to begin installing software.
 * sudo apt-get update
 *	sudo apt install software-properties-common
-*	sudo add-apt-repository ppa:deadsnakes/ppa
 *	sudo apt update
-*	OpenJDK 11 (sudo apt-get install openjdk-11-jdk)
-*	Git  (sudo apt install git)
-*	Maven (sudo apt install maven)
+*	sudo apt-get install openjdk-11-jdk
+*	sudo apt install git
+*	sudo apt install maven
 *	Python3 (or Anaconda if possible) 
 *	Scala via sbt (requires OpenJDK 11) – see https://www.scala-lang.org/download/
 *	Kafka (includes Zookeeper, requires OpenJDK) – see https://kafka.apache.org/documentation/#java – see https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04
