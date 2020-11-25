@@ -148,12 +148,19 @@ Open Firefox to [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
 
 ## Test Beam
 
-Open a new terminal in beam/env and run:
+Open a new terminal in /beam directory and prepare and run a test:
 
 ```bash
-python -m apache_beam.examples.wordcount --input /path/to/inputfile --output /path/to/write/counts
-```
+mkdir env/inputs
+mkdir env/outputs
 
+wget http://shakespeare.mit.edu/romeo_juliet/full.html -O env/inputs/romeo-juliet.txt
+
+python -m apache_beam.examples.wordcount --input env/inputs/romeo-juliet.txt --output env/outputs/romeo-juliet
+
+ls env/outputs/romeo*
+cat env/outputs/romeo*
+```
 
 ## Move VM to Proxmox
 
