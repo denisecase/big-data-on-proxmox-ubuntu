@@ -17,6 +17,7 @@
 *	HDFS (Hadoop distributed file system – might come with Spark?)
 *	Git
 *	Maven
+* Curl (to install Anaconda 3)
 
 ## Set up Locally
 
@@ -32,6 +33,7 @@
 * sudo apt-get update
 *	sudo apt install software-properties-common
 *	sudo apt update
+* sudo apt-get install curl
 *	sudo apt-get install openjdk-11-jdk
 *	sudo apt install git
 *	sudo apt install maven
