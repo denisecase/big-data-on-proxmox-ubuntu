@@ -76,12 +76,16 @@ Allow a couple hours to complete downloads and installations.
     * sudo deluser kafka sudo
     * sudo passwd kafka -l
     * Right-click the terminal icon to quit this session
-*	Spark – see https://phoenixnap.com/kb/install-spark-on-ubuntu
+*	Spark
+    * sudo apt install spark 
+    * quit the terminal and open a new one to continue
+    * OR the old way. See https://phoenixnap.com/kb/install-spark-on-ubuntu
     * wget https://downloads.apache.org/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz
     * tar xvf spark-*
     * sudo mv spark-3.0.1-bin-hadoop3.2   /opt/spark
     * echo "export SPARK_HOME=/opt/spark" >> ~/.profile
     * echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.profile
+    * source ~/.profile
 *	pip install --upgrade pip
 *	pip install --upgrade virtualenv
 *	pip install --upgrade setuptools
@@ -109,6 +113,8 @@ Note: Anaconda will be installed in /home/big-data-user/anaconda3.
 
 * Zookeeper service on 
 * Kafka service on 9092
+* Spark on 7077
+* Spark web interface at <http://127.0.0.1:8080/>
 
 ## Test Kafka Topic / Message / Consumer
 
@@ -121,6 +127,16 @@ echo "Hello, World" | ~/kafka/bin/kafka-console-producer.sh --broker-list localh
 ```
 
 When you are done testing, press CTRL+C to stop the consumer script. 
+
+## Test Spark
+
+Open a new terminal and run:
+
+```bash
+/opt/spark/sbin/start-master.sh
+```
+
+Open Firefox to [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
 
 ## Upload to Proxmox
 
