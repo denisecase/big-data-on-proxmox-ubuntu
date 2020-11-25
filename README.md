@@ -117,10 +117,12 @@ Note: Anaconda will be installed in /home/big-data-user/anaconda3.
 
 ## Typical Ports Used
 
-* Zookeeper service on 
-* Kafka service on 9092
-* Spark on 7077
-* Spark web interface at <http://127.0.0.1:8080/>
+* 2181 - Zookeeper service
+* 9092 - Kafka service
+* 7077 - Spark service
+* 8080 - View Spark web interface at <http://127.0.0.1:8080/>
+* 8099 - Beam Spark runner
+* 4040 - View Beam Spark runner web interface at <http://localhost:4040>
 
 ## Test Kafka Topic / Message / Consumer
 
