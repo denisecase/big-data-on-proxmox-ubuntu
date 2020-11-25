@@ -53,7 +53,28 @@ Allow a couple hours to complete downloads and installations.
 *	Scala via sbt (requires JDK 11)
     * wget https://www.scala-lang.org/files/archive/scala-2.13.4.deb
     * sudo dpkg -i scala*.deb
-*	Kafka (includes Zookeeper, requires OpenJDK) – see https://kafka.apache.org/documentation/#java – see https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04
+*	Kafka binary (includes Zookeeper, [requires JDK 8 or 11](https://kafka.apache.org/documentation/#java)) - see this [article](https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04):
+    * sudo useradd kafka -m
+    * sudo passwd kafka
+    * enter password for user kafka
+    * sudo adduser kafka sudo
+    * su -l kafka (logs in a kafka user)
+    * pwd (should show /home/kafka)
+    * mkdir ~/Downloads
+    * curl "https://downloads.apache.org/kafka/2.6.0/kafka_2.13-2.6.0.tgz" -o ~/Downloads/kafka.tgz
+    * mkdir ~/kafka && cd ~/kafka
+    * tar -xvzf ~/Downloads/kafka.tgz --strip 1
+    * Recommended: verify content in /home/kafka/kafka
+    * In the VM, open Firefox browser and go to the Digital Ocean article linked. 
+    * use nano to edit kafka/config/server.properties as directed (copy & paste from the article)
+    * create the unit file for zookeeper as directed (copy & paste from the article)
+    * enable kafka service on server boot (port 9092) with:
+    * sudo systemctl enable kafka
+    * sudo systemctl start kafka (start the service)
+    * Test the application as directed (commands also below for reference)
+    * Remove kafka from sudo group and lock the kafka user password so it can't be used to login:
+    * sudo deluser kafka sudo
+    * sudo passwd kafka -l
 *	Spark – see https://phoenixnap.com/kb/install-spark-on-ubuntu
 *	pip install --upgrade pip
 *	pip install --upgrade virtualenv
@@ -75,6 +96,23 @@ python3 --version
 ```
 
 Note: Anaconda will be installed in /home/big-data-user/anaconda3.
+
+## Default Ports
+
+* Zookeeper service on 
+* Kafka service on 9092
+
+## Test Kafka Topic / Message / Consumer
+
+```Bash
+~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
+
+echo "Hello, World" | ~/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TutorialTopic > /dev/null
+
+~/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TutorialTopic --from-beginning
+```
+
+When you are done testing, press CTRL+C to stop the consumer script. 
 
 ## Upload to Proxmox
 
