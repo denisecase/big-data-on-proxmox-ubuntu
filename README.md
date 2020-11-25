@@ -103,7 +103,7 @@ Allow a couple hours to complete downloads and installations.
     * pip install apache-beam[test]     
     * pip install apache-beam[docs]   
 
-## Verify Installs
+## Commands To Verify Installations
 
 ```Bash
 java -version
@@ -115,7 +115,7 @@ git --version
 
 Note: Anaconda will be installed in /home/big-data-user/anaconda3.
 
-## Default Ports
+## Typical Ports Used
 
 * Zookeeper service on 
 * Kafka service on 9092
@@ -144,5 +144,9 @@ Open a new terminal and run:
 
 Open Firefox to [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
 
-## Upload to Proxmox
+## Test Beam
+
+
+## Move VM to Proxmox
+
 
