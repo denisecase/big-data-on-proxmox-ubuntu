@@ -33,7 +33,7 @@
 * After restart, login. Exit the wizards (or read and work through them). 
 * Do not upgrade to Version 20, but accept updates for 18. 
 * In the lower left of the Ubuntu desktop, click the nine dots. Scroll to second window if needed to find "Terminal".
-* Open a Terminal to begin installing software.
+* Open a Terminal to begin installing software. (You should see a $ prompt.)
 * sudo apt-get update
 *	sudo apt install software-properties-common
 *	sudo apt update
