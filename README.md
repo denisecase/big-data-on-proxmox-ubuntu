@@ -46,13 +46,13 @@ Allow a couple hours to complete downloads and installations.
 *	sudo apt install git -y
 *	sudo apt install maven -y
 *	Python3 (or Anaconda) - see [article](https://www.hostinger.com/tutorials/how-to-install-anaconda-on-ubuntu/)
-  * cd /tmp
-  * curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
-  * sha256sum Anaconda3-2020.11-Linux-x86_64.sh
-  * bash Anaconda*.sh
-*	Scala via sbt (requires JDK 11): 
-  * wget https://www.scala-lang.org/files/archive/scala-2.13.4.deb
-  * sudo dpkg -i scala*.deb
+    * cd /tmp
+    * curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+    * sha256sum Anaconda3-2020.11-Linux-x86_64.sh
+    * bash Anaconda*.sh
+*	Scala via sbt (requires JDK 11)
+    * wget https://www.scala-lang.org/files/archive/scala-2.13.4.deb
+    * sudo dpkg -i scala*.deb
 *	Kafka (includes Zookeeper, requires OpenJDK) – see https://kafka.apache.org/documentation/#java – see https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04
 *	Spark – see https://phoenixnap.com/kb/install-spark-on-ubuntu
 *	pip install --upgrade pip
@@ -60,11 +60,11 @@ Allow a couple hours to complete downloads and installations.
 *	pip install --upgrade setuptools
 *	create a python virtualenv 
 *	in the virtual python env, install Beam – see https://beam.apache.org/get-started/quickstart-py/
-* pip install apache-beam
-* pip install apache-beam[gcp]
-* pip install apache-beam[aws]     
-* pip install apache-beam[test]     
-* pip install apache-beam[docs]   
+    * pip install apache-beam
+    * pip install apache-beam[gcp]
+    * pip install apache-beam[aws]     
+    * pip install apache-beam[test]     
+    * pip install apache-beam[docs]   
 
 ## Verify Installs
 
