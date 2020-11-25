@@ -162,6 +162,13 @@ ls env/outputs/romeo*
 cat env/outputs/romeo*
 ```
 
+## Logout
+
+When done, at the $ prompt, type `gnome-session-quit`.
+
+Back in VirtualBox, on the big-data-ubuntu VM, right-click / Close / ACPI Shutdown. 
+
 ## Move VM to Proxmox
 
+Follow instructions in this [article](https://www.itsfullofstars.de/2019/07/import-ova-as-proxmox-vm/).
 
