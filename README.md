@@ -86,11 +86,17 @@ Allow a couple hours to complete downloads and installations.
     * echo "export SPARK_HOME=/opt/spark" >> ~/.profile
     * echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.profile
     * source ~/.profile
-*	pip install --upgrade pip
-*	pip install --upgrade virtualenv
-*	pip install --upgrade setuptools
-*	create a python virtualenv 
-*	in the virtual python env, install Beam – see https://beam.apache.org/get-started/quickstart-py/
+* Install Python Tools
+    *	pip install --upgrade pip
+    *	pip install --upgrade virtualenv
+    *	pip install --upgrade setuptools
+*	Create a Python virtualenv and activate it
+    * From your home/big-data-user folder:
+    * mkdir beam
+    * cd beam
+    * virtualenv env
+    * source env/bin/activate
+*	in the virtual Python env, install Beam – see https://beam.apache.org/get-started/quickstart-py/
     * pip install apache-beam
     * pip install apache-beam[gcp]
     * pip install apache-beam[aws]     
