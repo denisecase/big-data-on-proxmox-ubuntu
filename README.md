@@ -148,6 +148,12 @@ Open Firefox to [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
 
 ## Test Beam
 
+Open a new terminal in beam/env and run:
+
+```bash
+python -m apache_beam.examples.wordcount --input /path/to/inputfile --output /path/to/write/counts
+```
+
 
 ## Move VM to Proxmox
 
