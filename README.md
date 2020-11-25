@@ -28,6 +28,7 @@
   * Set Hard disk type to VMDK
   * Select 'fixed', increase to ~40 GB
   * When installing Linux, create a general user, e.g., big-data-user
+  * After post-install restart, if it pauses with a notice, hit enter until it continues.
   * Do not install VirtualBox Guest Addons on Ubuntu (incompatible with Proxmox)
 * After installation, open a terminal to begin installing software.
 * sudo apt-get update
