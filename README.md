@@ -30,7 +30,9 @@
   * When installing Linux, create a general user, e.g., big-data-user
   * After post-install restart, if it pauses with an sda notice, hit enter until it continues. It may take awhile.
   * Do not install VirtualBox Guest Addons on Ubuntu (incompatible with Proxmox)
-* After restart, login and open a terminal to begin installing software.
+* After restart, login. Exit the wizards (or read and work through them). 
+* Do not upgrade to Version 20, but accept updates for 18. 
+* Open a terminal to begin installing software.
 * sudo apt-get update
 *	sudo apt install software-properties-common
 *	sudo apt update
