@@ -71,7 +71,7 @@ Allow a couple hours to complete downloads and installations.
 ```Bash
 java -version
 scala -version
-python -version
+python3 --version
 ```
 
 Note: Anaconda will be installed in /home/big-data-user/anaconda3.
