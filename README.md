@@ -2,6 +2,8 @@
 
 > Setting up big data tools on an Ubuntu VM running on Proxmox
 
+Allow a couple hours to complete downloads and installations.
+
 ## Main Big Data Tools
 
 *	Apache [Kafka](https://kafka.apache.org/downloads) (pub/sub) – version 2.13 binary version – comes with Zookeeper
@@ -12,7 +14,7 @@
 
 *	[Python 3](https://www.python.org/downloads/) ([Anaconda individual edition](https://www.anaconda.com/products/individual) if possible)
 *	[OpenJDK 11](https://jdk.java.net/15/) (Scala/sbt requires 11) – [installation instructions](https://openjdk.java.net/install/)
-*	Scala 2.13.2 (https://www.scala-lang.org/)
+*	Scala 2.13.4 (https://www.scala-lang.org/)
 *	Zookeeper coordination service – installed with Kafka above
 *	HDFS (Hadoop distributed file system – might come with Spark?)
 *	Git
@@ -36,14 +38,21 @@
 * In the lower left of the Ubuntu desktop, click the nine dots. Scroll to second window if needed to find "Terminal".
 * Click the "Terminal" app to begin installing software. (You should see a $ prompt.) Enter password as needed.
 * sudo apt-get update
+* sudo apt-get upgrade -y
 *	sudo apt install software-properties-common
 *	sudo apt update
-* sudo apt-get install curl
-*	sudo apt-get install openjdk-11-jdk
-*	sudo apt install git
-*	sudo apt install maven
-*	Python3 (or Anaconda if possible) 
-*	Scala via sbt (requires OpenJDK 11) – see https://www.scala-lang.org/download/
+* sudo apt-get install curl -y
+*	sudo apt-get install openjdk-11-jdk -y
+*	sudo apt install git -y
+*	sudo apt install maven -y
+*	Python3 (or Anaconda) - see [article](https://www.hostinger.com/tutorials/how-to-install-anaconda-on-ubuntu/)
+  * cd /tmp
+  * curl -O https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+  * sha256sum Anaconda3-2020.11-Linux-x86_64.sh
+  * bash Anaconda*.sh
+*	Scala via sbt (requires JDK 11): 
+  * wget https://www.scala-lang.org/files/archive/scala-2.13.4.deb
+  * sudo dpkg -i scala*.deb
 *	Kafka (includes Zookeeper, requires OpenJDK) – see https://kafka.apache.org/documentation/#java – see https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04
 *	Spark – see https://phoenixnap.com/kb/install-spark-on-ubuntu
 *	pip install --upgrade pip
@@ -56,6 +65,16 @@
 * pip install apache-beam[aws]     
 * pip install apache-beam[test]     
 * pip install apache-beam[docs]   
+
+## Verify Installs
+
+```Bash
+java -version
+scala -version
+python -version
+```
+
+Note: Anaconda will be installed in /home/big-data-user/anaconda3.
 
 ## Upload to Proxmox
 
