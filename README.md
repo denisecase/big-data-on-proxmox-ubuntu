@@ -181,3 +181,11 @@ Follow instructions in this [article](https://www.itsfullofstars.de/2019/07/impo
 - Log in to Ubuntu
 - follow the process above, starting with `sudo apt-get update`
 - Aanaconda will default to /home/username/anaconda3 
+- Before testing Kafka, configure Zookeeper as above and start Zookeeper
+- Start Kafka and create a topic to test
+
+```ubuntu
+cd /home/kafka/kafka/bin
+./zookeeper-shell.sh localhost:2181  (Keep this window open)
+
+./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
