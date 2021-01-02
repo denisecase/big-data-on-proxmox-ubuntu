@@ -180,4 +180,4 @@ Follow instructions in this [article](https://www.itsfullofstars.de/2019/07/impo
 - Open Console (see upper right)
 - Log in to Ubuntu
 - follow the process above, starting with `sudo apt-get update`
-- Aanaconda will default to /home/username/anaconda3 where username is the username logged in as
+- Aanaconda will default to /home/username/anaconda3 
