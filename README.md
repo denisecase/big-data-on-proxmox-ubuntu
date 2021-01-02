@@ -72,6 +72,8 @@ Allow a couple hours to complete downloads and installations.
     * sudo systemctl enable kafka
     * sudo systemctl start kafka (start the service)
     * Test the application as directed (commands also below for reference)
+    * sudo journalctl -u kafka
+    * Hit q to exit (debug issues until service starts successfully)
     * Remove kafka from sudo group and lock the kafka user password so it can't be used to login:
     * sudo deluser kafka sudo
     * sudo passwd kafka -l
@@ -184,8 +186,11 @@ Follow instructions in this [article](https://www.itsfullofstars.de/2019/07/impo
 - Before testing Kafka, configure Zookeeper as above and start Zookeeper
 - Start Kafka and create a topic to test
 
+
 ```ubuntu
 cd /home/kafka/kafka/bin
-./zookeeper-shell.sh localhost:2181  (Keep this window open)
-
+./zookeeper-shell.sh localhost:2181  # verify zookeeper starts
+sudo systemctl start kafka
+sudo journalctl -u kafka  # view the logs (& address any errors) hit q to quit viewing
 ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
+```
