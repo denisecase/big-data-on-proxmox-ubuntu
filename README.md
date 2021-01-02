@@ -81,7 +81,7 @@ Allow a couple hours to complete downloads and installations.
 *	Spark
     * sudo apt install spark 
     * quit the terminal and open a new one to continue
-    * OR the old way. See https://phoenixnap.com/kb/install-spark-on-ubuntu
+* OR Spark the old way. See https://phoenixnap.com/kb/install-spark-on-ubuntu
     * wget https://downloads.apache.org/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz
     * tar xvf spark-*
     * sudo mv spark-3.0.1-bin-hadoop3.2   /opt/spark
