@@ -185,6 +185,7 @@ Follow instructions in this [article](https://www.itsfullofstars.de/2019/07/impo
 - Aanaconda will default to /home/username/anaconda3 
 - Before testing Kafka, configure Zookeeper as above and start Zookeeper
 - Start Kafka and create a topic to test
+- Recommended - Step 6 — Install KafkaT (Optional) from [article](https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04)
 
 
 ```ubuntu
