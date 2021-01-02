@@ -65,7 +65,7 @@ Allow a couple hours to complete downloads and installations.
     * mkdir ~/kafka && cd ~/kafka
     * tar -xvzf ~/Downloads/kafka.tgz --strip 1
     * Recommended: verify content in /home/kafka/kafka
-    * In the VM, open Firefox browser and go to the Digital Ocean article linked. 
+    * In the VM, open Firefox browser and go to the [Digital Ocean article](https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04). 
     * use nano to edit kafka/config/server.properties as directed (copy & paste from the article)
     * create the unit file for zookeeper as directed (copy & paste from the article)
     * enable kafka service on server boot (port 9092) with:
