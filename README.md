@@ -103,7 +103,7 @@ Allow a couple hours to complete downloads and installations.
     * pip install apache-beam[test]     
     * pip install apache-beam[docs]   
 
-## Commands To Verify Installations
+### Commands To Verify Installations
 
 ```Bash
 java -version
@@ -115,7 +115,7 @@ git --version
 
 Note: Anaconda will be installed in /home/big-data-user/anaconda3.
 
-## Typical Ports Used
+### Typical Ports Used
 
 * 2181 - Zookeeper service
 * 9092 - Kafka service
@@ -124,7 +124,7 @@ Note: Anaconda will be installed in /home/big-data-user/anaconda3.
 * 8099 - Beam Spark runner
 * 4040 - View Beam Spark runner web interface at <http://localhost:4040>
 
-## Test Kafka Topic / Message / Consumer
+### Test Kafka Topic / Message / Consumer
 
 ```Bash
 ~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
@@ -136,7 +136,7 @@ echo "Hello, World" | ~/kafka/bin/kafka-console-producer.sh --broker-list localh
 
 When you are done testing, press CTRL+C to stop the consumer script. 
 
-## Test Spark
+### Test Spark
 
 Open a new terminal and run:
 
@@ -146,7 +146,7 @@ Open a new terminal and run:
 
 Open Firefox to [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
 
-## Test Beam
+### Test Beam
 
 Open a new terminal in /beam directory and prepare and run a test:
 
@@ -162,13 +162,22 @@ ls env/outputs/romeo*
 cat env/outputs/romeo*
 ```
 
-## Logout
+### Logout
 
 When done, at the $ prompt, type `gnome-session-quit`.
 
 Back in VirtualBox, on the big-data-ubuntu VM, right-click / Close / ACPI Shutdown. 
 
-## Move VM to Proxmox
+### Move Configured VM to Proxmox
 
 Follow instructions in this [article](https://www.itsfullofstars.de/2019/07/import-ova-as-proxmox-vm/).
+
+
+## Set up VM on Proxmox
+
+- Log in to proxmox
+- Start the big data VM
+- Open Console (see upper right)
+- Log in to Ubuntu
+- follow the process above, starting with `sudo apt-get update`
 
