@@ -151,8 +151,9 @@ Recommendation: do NOT name topics with dot (.) or underscore(\_) as they could 
 To work with topics, cd kafka and run commands such as the following. 
 
 ```Bash
-./bin/kafka-topics.sh --zookeeper localhost:2181 --list
-./bin/kafka-topics.sh --create --topic topic517-noon --zookeeper localhost:2181 --replication-factor 1 --partitions 1 
+./bin/kafka-topics.sh --list --zookeeper localhost:2181 
+./bin/kafka-topics.sh --create --topic topic517 --zookeeper localhost:2181 --replication-factor 1 --partitions 1 
+./bin/kafka-topics.sh --delete --topic topic517 --zookeeper localhost:2181 
 echo "Hello, World" | ./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic topic517.noon > /dev/null
 ./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic517.noon --from-beginning
 ```
