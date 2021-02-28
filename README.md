@@ -172,6 +172,7 @@ touch start-z.sh
 touch start-k.sh
 touch list-topics.sh
 touch create-topic.sh
+touch delete-topic.sh
 chmod +x *.sh
 ```
 
@@ -184,6 +185,7 @@ Execute with short commands from the kafka folder:
 ./start-k.sh
 ./list-topics.sh
 ./create-topic.sh
+./delete-topic.sh
 ```
 
 ### Test Spark
