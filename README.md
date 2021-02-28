@@ -126,17 +126,62 @@ Note: Anaconda will be installed in /home/big-data-user/anaconda3.
 * 8099 - Beam Spark runner
 * 4040 - View Beam Spark runner web interface at <http://localhost:4040>
 
-### Test Kafka Topic / Message / Consumer
+### Starting / Restarting Zookeeper and Kafka Services
+
+To execute Kafka shell commands on the VM, login as user kafka.
+
+Run Zookeeper Service (keep running, minimize terminal) - in new terminal:
 
 ```Bash
-~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
+cd kafka
+./bin/zookeeper-server-start.sh ./config/zookeeper.properties
+```
 
-echo "Hello, World" | ~/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TutorialTopic > /dev/null
+Run Kafka Service  (keep running, minimize terminal) -  in new terminal:
 
-~/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TutorialTopic --from-beginning
+```Bash
+cd kafka
+./bin/kafka-server-start.sh ./config/server.properties
+```
+
+### Work with Kafka Topics
+
+To work with topics, cd kafka and run commands such as the following. 
+
+```Bash
+./bin/kafka-topics.sh --zookeeper localhost:2181 --list
+./bin/kafka-topics.sh --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic --create topic517.noon
+echo "Hello, World" | ./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic topic517.noon > /dev/null
+./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic517.noon --from-beginning
 ```
 
 When you are done testing, press CTRL+C to stop the consumer script. 
+
+
+### Making Kafka Easier with Scripts
+
+To create scripts, cd into kafka folder and use touch to create a set of files. 
+Then add "execute" priviledges to all your scripts. 
+For example:
+
+```Bash
+touch start-z.sh
+touch start-k.sh
+touch list-topics.sh
+touch create-topic.sh
+chmod +x *.sh
+```
+
+Edit each file to include the command provided above (or similar). 
+You may want to add #!/bih/sh to the top line. 
+Execute with short commands from the kafka folder:
+
+```Bash
+./start-z.sh
+./start-k.sh
+./list-topics.sh
+./create-topic.sh
+```
 
 ### Test Spark
 
